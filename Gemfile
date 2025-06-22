@@ -11,6 +11,7 @@ gem 'nokogiri'
 gem 'toml-rb'
 gem 'drb'
 gem 'observer'
+gem 'reline'
 
 # Projects pulled out of Re:
 gem 'termcontroller', '>= 0.5'
