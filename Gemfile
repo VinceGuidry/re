@@ -2,8 +2,6 @@
 
 source 'https://rubygems.org'
 
-ruby '3.2.2'
-
 gem 'rouge'
 gem 'slop'
 gem 'object_tracker', '~> 2.1'
@@ -11,6 +9,8 @@ gem 'gitattributes'
 gem 'editorconfig'
 gem 'nokogiri'
 gem 'toml-rb'
+gem 'drb'
+gem 'observer'
 
 # Projects pulled out of Re:
 gem 'termcontroller', '>= 0.5'
