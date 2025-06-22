@@ -23,23 +23,11 @@
 require 'shellwords'
 
 class HelperRegistry
-  # This is because Bundler is a piece of shit.
-  # It pollutes the environments in ways that makes
-  # spawning a Ruby program from Ruby wildly unreliable
-  # unless you clear out as much as possible
+
   def start(cmd)
-    dir =
-      spawn(
-        { 'HOME' => ENV['HOME'],
-          'DISPLAY' => ENV['DISPLAY'],
-          'LANG' => ENV['LANG'],
-          'PATH' => ENV['PATH'] },
-        cmd,
-        {
-          unsetenv_others: true,
-          chdir: File.expand_path('~')
-        }
-      )
+    Bundler.with_original_env do
+      system(cmd)
+    end
   end
 
   def select_section(buffer)
